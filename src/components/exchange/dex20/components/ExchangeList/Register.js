@@ -72,13 +72,14 @@ class Register extends Component{
         let trc20_price = intl.formatMessage({id: 'trc20_price'})+second_token
         let trc20_amount = intl.formatMessage({id: 'trc20_amount'})+first_token
         let trc20_accumulative = intl.formatMessage({id: 'trc20_accumulative'})+second_token
-
+        let sellLen = sellList.length;
+        let sellLimit = sellLen < 8 ? sellLen : limit;
         const sell_columns = [{
             title: '',
             key: 'sell',
             render: (text, record, index) => {
               return <div className="col-red">
-                {intl.formatMessage({id: 'trc20_sell'})}{(limit-index)}
+                {intl.formatMessage({id: 'trc20_sell'})}{(sellLimit-index)}
               </div>
             }
           },
