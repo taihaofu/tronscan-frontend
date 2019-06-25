@@ -157,6 +157,7 @@ module.exports = {
               paths.appSrc,
               path.resolve(paths.appNodeModules, "@tronscan/client/src"),
               path.resolve(paths.appNodeModules, "query-string"),
+              path.resolve(paths.appNodeModules, 'split-on-first'),
               path.resolve(paths.appNodeModules, "strict-uri-encode"),
               path.resolve(paths.appNodeModules, "instascan/src/camera.js"),
               path.resolve(paths.appNodeModules, "instascan/src/scanner.js"),

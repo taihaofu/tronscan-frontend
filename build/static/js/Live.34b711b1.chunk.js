@@ -1,0 +1,67 @@
+webpackJsonp([19],{
+
+/***/ 2357:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports,"__esModule",{value:true});var _row=__webpack_require__(465);var _row2=_interopRequireDefault(_row);var _col=__webpack_require__(466);var _col2=_interopRequireDefault(_col);var _checkbox=__webpack_require__(158);var _checkbox2=_interopRequireDefault(_checkbox);var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||false;descriptor.configurable=true;if("value"in descriptor)descriptor.writable=true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};}();__webpack_require__(2973);__webpack_require__(2974);__webpack_require__(1069);var _react=__webpack_require__(0);var _react2=_interopRequireDefault(_react);var _reactRedux=__webpack_require__(19);var _api=__webpack_require__(14);var _reactIntl=__webpack_require__(11);var _constants=__webpack_require__(22);var _loaders=__webpack_require__(25);var _Links=__webpack_require__(23);var _i18n=__webpack_require__(13);function _interopRequireDefault(obj){return obj&&obj.__esModule?obj:{default:obj};}function _toConsumableArray(arr){if(Array.isArray(arr)){for(var i=0,arr2=Array(arr.length);i<arr.length;i++){arr2[i]=arr[i];}return arr2;}else{return Array.from(arr);}}function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self,call){if(!self){throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call&&(typeof call==="object"||typeof call==="function")?call:self;}function _inherits(subClass,superClass){if(typeof superClass!=="function"&&superClass!==null){throw new TypeError("Super expression must either be null or a function, not "+typeof superClass);}subClass.prototype=Object.create(superClass&&superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__=superClass;}function _objectWithoutProperties(obj,keys){var target={};for(var i in obj){if(keys.indexOf(i)>=0)continue;if(!Object.prototype.hasOwnProperty.call(obj,i))continue;target[i]=obj[i];}return target;}/* eslint-disable no-undef */var MESSAGE_LIMIT=30;function Trxrow(_ref){var valdata=_ref.valdata,icon=_ref.icon,children=_ref.children,props=_objectWithoutProperties(_ref,["valdata","icon","children"]);return _react2.default.createElement("li",{className:"list-group-item p-1"},_react2.default.createElement("div",Object.assign({className:"media my-3 mx-3",key:valdata},props),_react2.default.createElement("div",{className:"media-body mb-0 lh-125 "},children)));}var Live=function(_React$Component){_inherits(Live,_React$Component);function Live(){_classCallCheck(this,Live);var _this=_possibleConstructorReturn(this,(Live.__proto__||Object.getPrototypeOf(Live)).call(this));_this.listen=function(){// this.listener = channel("/blockchain");
+// this.listener.on("transfer", trx => {
+//   this.addEvent({
+//     type: "transfer",
+//     ...trx,
+//   });
+// });
+// this.listener.on("vote", event => {
+//   this.addEvent({
+//     type: "vote",
+//     ...event,
+//   });
+// });
+// this.listener.on("asset-participate", event => {
+//   this.addEvent({
+//     type: "asset-participate",
+//     ...event,
+//   });
+// });
+// this.listener.on("witness-create", event => {
+//   this.addEvent({
+//     type: "witness-create",
+//     ...event,
+//   });
+// });
+// this.listener.on("asset-create", event => {
+//   this.addEvent({
+//     type: "asset-create",
+//     ...event,
+//   });
+// });
+};_this.addEvent=function(event){event.id=_this.id++;if(_this.state.filters.indexOf(event.type)>-1){_this.setState(function(prevState,props){return{events:[event].concat(_toConsumableArray(prevState.events.slice(0,MESSAGE_LIMIT)))};});}};_this.id=0;_this.state={events:[],filters:[],filterButtons:[{label:(0,_i18n.tu)("transactions"),icon:'fa fa-exchange-alt',value:'transfer'},{label:(0,_i18n.tu)("votes"),icon:'fa fa-bullhorn',value:'vote'},{label:(0,_i18n.tu)("asset_participation"),icon:'fa fa-arrow-right',value:'asset-participate'},{label:(0,_i18n.tu)("token_created"),icon:'fa fa-plus-circle',value:'asset-create'},{label:(0,_i18n.tu)("witness"),icon:'fa fa-eye',value:'witness-create'},{label:(0,_i18n.tu)("account"),icon:'fa fa-user',value:'account-name-changed'}]};var _iteratorNormalCompletion=true;var _didIteratorError=false;var _iteratorError=undefined;try{for(var _iterator=_this.state.filterButtons[Symbol.iterator](),_step;!(_iteratorNormalCompletion=(_step=_iterator.next()).done);_iteratorNormalCompletion=true){var button=_step.value;_this.state.filters.push(button.value);}}catch(err){_didIteratorError=true;_iteratorError=err;}finally{try{if(!_iteratorNormalCompletion&&_iterator.return){_iterator.return();}}finally{if(_didIteratorError){throw _iteratorError;}}}return _this;}_createClass(Live,[{key:"componentDidMount",value:function componentDidMount(){this.listen();}},{key:"componentWillUnmount",value:function componentWillUnmount(){this.listener.close();}},{key:"buildRow",value:function buildRow(event,index){switch(event.type){case"transfer":return _react2.default.createElement(Trxrow,{key:event.id,icon:"fa-exchange-alt"},_react2.default.createElement("div",{className:"row"},_react2.default.createElement("div",{className:"col-xs-10 col-sm-5"},_react2.default.createElement("h5",{className:"card-title text-left"},_react2.default.createElement("b",null,(0,_i18n.tu)("token_transfer"))),(0,_i18n.tu)("from"),': ',_react2.default.createElement("span",{className:"position-absolute ml-2"},_react2.default.createElement(_Links.AddressLink,{address:event.transferFromAddress,truncate:true}))),_react2.default.createElement("div",{className:"col-xs-4 col-sm-2 d-flex justify-content-center align-items-center"},_react2.default.createElement("img",{src:__webpack_require__(225)})),_react2.default.createElement("div",{className:"col-xs-10 col-sm-5"},_react2.default.createElement("div",null,(0,_i18n.tu)("asset"),': ',event.tokenName==='TRX'?_react2.default.createElement("b",null,_react2.default.createElement(_reactIntl.FormattedNumber,{maximumFractionDigits:7,minimunFractionDigits:7,value:event.amount/_constants.ONE_TRX})):_react2.default.createElement("b",null,_react2.default.createElement(_reactIntl.FormattedNumber,{maximumFractionDigits:7,minimunFractionDigits:7,value:event.amount})),' ',event.tokenName),_react2.default.createElement("div",null,(0,_i18n.tu)("to"),': ',_react2.default.createElement("span",{className:"position-absolute ml-2"},_react2.default.createElement(_Links.AddressLink,{address:event.transferToAddress,truncate:true}))))));case"vote":return _react2.default.createElement(Trxrow,{key:event.id,icon:"fa-bullhorn"},_react2.default.createElement("div",{className:"row"},_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},_react2.default.createElement("h5",{className:"card-title text-left"},_react2.default.createElement("b",null,(0,_i18n.tu)("voting")))),_react2.default.createElement("div",{className:"col-xs-8 col-sm-2"}),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("votes"),': ',_react2.default.createElement("b",null,_react2.default.createElement(_reactIntl.FormattedNumber,{value:event.votes}))),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("voter"),': ',_react2.default.createElement("span",{className:"position-absolute ml-2"},_react2.default.createElement(_Links.AddressLink,{address:event.voterAddress,truncate:false}))),_react2.default.createElement("div",{className:"col-xs-8 col-sm-2"}),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("representatives"),': ',_react2.default.createElement("span",{className:"position-absolute ml-2"},_react2.default.createElement(_Links.AddressLink,{address:event.candidateAddress,truncate:false})))));case"asset-participate":return _react2.default.createElement(Trxrow,{key:event.id,icon:"fa-arrow-right"},_react2.default.createElement("div",{className:"row"},_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},_react2.default.createElement("h5",{className:"card-title text-left"},_react2.default.createElement("b",null,(0,_i18n.tu)("asset_participation")))),_react2.default.createElement("div",{className:"col-xs-8 col-sm-2"}),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("token_name"),': ',_react2.default.createElement("b",null,event.name)),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("owner_address"),': ',_react2.default.createElement("span",{className:"position-absolute ml-2"},_react2.default.createElement(_Links.AddressLink,{address:event.ownerAddress,truncate:false}))),_react2.default.createElement("div",{className:"col-xs-8 col-sm-2"}),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("bought"),': ',event.amount," ",event.name)));case"asset-create":return _react2.default.createElement(Trxrow,{key:event.id,icon:"fa-plus-circle"},_react2.default.createElement("div",{className:"row"},_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},_react2.default.createElement("h5",{className:"card-title text-left"},_react2.default.createElement("b",null,(0,_i18n.tu)("token_creation")))),_react2.default.createElement("div",{className:"col-xs-8 col-sm-2"}),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("token_name"),': ',_react2.default.createElement("b",null,_react2.default.createElement(_Links.TokenLink,{name:event.name}))),_react2.default.createElement("div",{className:"col-sm-9"},(0,_i18n.tu)("address"),': ',_react2.default.createElement(_Links.AddressLink,{address:event.ownerAddress,truncate:false}),' ',(0,_i18n.t)("created_token"),' ',_react2.default.createElement(_Links.TokenLink,{name:event.name}))));case"witness-create":return _react2.default.createElement(Trxrow,{key:event.id,icon:"fa-user"},_react2.default.createElement("div",{className:"row"},_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},_react2.default.createElement("h5",{className:"card-title text-left"},_react2.default.createElement("b",null,(0,_i18n.tu)("sr_candidature")))),_react2.default.createElement("div",{className:"col-xs-8 col-sm-2"}),_react2.default.createElement("div",{className:"col-xs-8 col-sm-5"},(0,_i18n.tu)("address"),': ',_react2.default.createElement(_Links.AddressLink,{address:event.ownerAddress,truncate:false}),' ',(0,_i18n.t)("applied_for_super_representative"))));}return _react2.default.createElement("div",{className:"media pt-3",key:'other-'+index},_react2.default.createElement("p",{className:"media-body pb-3 mb-0 small lh-125 "},"Unknown"));}},{key:"setFilter",value:function setFilter(value){this.setState({filters:value});}},{key:"render",value:function render(){var _this2=this;var _state=this.state,events=_state.events,filters=_state.filters,filterButtons=_state.filterButtons;return _react2.default.createElement("main",{className:"container header-overlap page-live pb-3 token_black live"},_react2.default.createElement("div",{className:"row"},_react2.default.createElement("div",{className:"col-md-12 mb-4"},_react2.default.createElement("div",{className:"card"},_react2.default.createElement("div",{className:"card-body"},_react2.default.createElement("h5",{className:"card-title"},(0,_i18n.tu)("filters")),_react2.default.createElement("form",{className:"pt-2"},_react2.default.createElement(_checkbox2.default.Group,{style:{width:'100%'},onChange:this.setFilter.bind(this),defaultValue:filters},_react2.default.createElement(_row2.default,{className:"d-flex"},filterButtons.map(function(filterButton){return _react2.default.createElement(_col2.default,{className:"mr-5",key:filterButton.value},_react2.default.createElement("i",{className:filterButton.icon+" ml-2"}),_react2.default.createElement("span",{className:"ml-1 mr-1"},filterButton.label),_react2.default.createElement(_checkbox2.default,{value:filterButton.value}));}))))))),_react2.default.createElement("div",{className:"col-md-12 mt-3 mt-md-0"},events.length===0?_react2.default.createElement("div",{className:"card"},_react2.default.createElement(_loaders.TronLoader,null,(0,_i18n.tu)("waiting_for_transactions"))):_react2.default.createElement("div",{className:"card"},_react2.default.createElement("ul",{className:"list-group list-group-flush"},events.map(function(row){return _this2.buildRow(row);}))))));}}]);return Live;}(_react2.default.Component);function mapStateToProps(state){return{};}var mapDispatchToProps={};exports.default=(0,_reactRedux.connect)(mapStateToProps,mapDispatchToProps)(Live);
+
+/***/ }),
+
+/***/ 2973:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(42);
+
+__webpack_require__(1065);
+
+/***/ }),
+
+/***/ 2974:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+__webpack_require__(42);
+
+__webpack_require__(1065);
+
+/***/ })
+
+});
+//# sourceMappingURL=Live.34b711b1.chunk.js.map
